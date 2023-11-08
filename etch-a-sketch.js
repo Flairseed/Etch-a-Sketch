@@ -1,6 +1,7 @@
 const canvas = document.querySelector(".canvas");
 const inputSize = document.querySelector(".input-size");
 inputSize.addEventListener("click", defineSize);
+let colorMode = "normal"
 const defaultPixels = 16;
 generatePixels(defaultPixels);
 
@@ -11,8 +12,20 @@ function generatePixels (pixelSize) {
   canvas.style.setProperty("--pixels", pixelSize)
   for (let i = 0; i < pixelSize**2; i++) {
     const pixel = document.createElement("div");
-    pixel.addEventListener("mouseenter", e => pixel.style.backgroundColor = "black");
+    pixel.addEventListener("mouseenter", changePixelColor);
     canvas.appendChild(pixel);
+  }
+
+  function changePixelColor (event) {
+    const currentPixel = event.currentTarget;
+    let color;
+    if (colorMode === "normal") {
+      color = "black"
+    }
+    else if (colorMode === "rgb") {
+      color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+    }
+    currentPixel.style.backgroundColor = color;
   }
 }
 
