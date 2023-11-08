@@ -13,6 +13,9 @@ function generatePixels (pixelSize) {
   for (let i = 0; i < pixelSize**2; i++) {
     const pixel = document.createElement("div");
     pixel.setAttribute("class", "pixel");
+    pixel.style.setProperty("--red", 255);
+    pixel.style.setProperty("--green", 255);
+    pixel.style.setProperty("--blue", 255);
     pixel.addEventListener("mouseenter", changePixelColor);
     canvas.appendChild(pixel);
   }
@@ -30,7 +33,10 @@ function generatePixels (pixelSize) {
       currentPixel.style.setProperty("--blue", Math.floor(Math.random() * 255))
     }
     else if (colorMode === "darken") {
-      
+      console.log(currentPixel.style.getPropertyValue("--red"))
+      currentPixel.style.setProperty("--red", currentPixel.style.getPropertyValue("--red") - 25.5);
+      currentPixel.style.setProperty("--green", currentPixel.style.getPropertyValue("--green") - 25.5);
+      currentPixel.style.setProperty("--blue", currentPixel.style.getPropertyValue("--blue") - 25.5);
     }
   }
 }
