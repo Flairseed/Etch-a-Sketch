@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 50px;
 }
 
 .canvas {
@@ -14,7 +14,7 @@ body {
   border: solid black 5px;
 }
 
-.input-size, .mode-buttons button {
+.input-size, .mode-buttons button, .clear {
   font-size: xx-large;
   padding: 10px;
 }
