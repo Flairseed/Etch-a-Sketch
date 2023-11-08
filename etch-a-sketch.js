@@ -28,14 +28,14 @@ function generatePixels (pixelSize) {
   function changePixelColor (event) {
     const currentPixel = event.currentTarget;
     if (colorMode === "normal") {
-      currentPixel.style.setProperty("--red", 0)
-      currentPixel.style.setProperty("--green", 0)
-      currentPixel.style.setProperty("--blue", 0)
+      currentPixel.style.setProperty("--red", 0);
+      currentPixel.style.setProperty("--green", 0);
+      currentPixel.style.setProperty("--blue", 0);
     }
     else if (colorMode === "rgb") {
-      currentPixel.style.setProperty("--red", Math.floor(Math.random() * 255))
-      currentPixel.style.setProperty("--green", Math.floor(Math.random() * 255))
-      currentPixel.style.setProperty("--blue", Math.floor(Math.random() * 255))
+      currentPixel.style.setProperty("--red", Math.floor(Math.random() * 255));
+      currentPixel.style.setProperty("--green", Math.floor(Math.random() * 255));
+      currentPixel.style.setProperty("--blue", Math.floor(Math.random() * 255));
     }
     else if (colorMode === "darken") {
       currentPixel.style.setProperty("--red", currentPixel.style.getPropertyValue("--red") - 25.5);
@@ -48,9 +48,9 @@ function generatePixels (pixelSize) {
 function defineSize (event) {
   const pixelSize = prompt("How many pixels wide do you want the canvas to be?");
   if (Number.isInteger(+pixelSize) && +pixelSize >= 16 && +pixelSize <= 100) {
-    generatePixels(+pixelSize)
+    generatePixels(+pixelSize);
   }
   else {
-    alert("invalid input, please try again.")
+    alert("invalid input, please try again.");
   }
 }
