@@ -18,3 +18,7 @@ body {
   font-size: xx-large;
   padding: 10px;
 }
+
+.pixel {
+  background-color: rgb(var(--red), var(--green), var(--blue));
+}
