@@ -14,7 +14,7 @@ body {
   border: solid black 5px;
 }
 
-.input-size {
+.input-size, .mode-buttons button {
   font-size: xx-large;
   padding: 10px;
 }
