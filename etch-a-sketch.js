@@ -2,12 +2,14 @@ const canvas = document.querySelector(".canvas");
 const inputSize = document.querySelector(".input-size");
 const rgbMode = document.querySelector(".rgb-mode");
 const darkenMode = document.querySelector(".darken-mode");
-const normalMode = document.querySelector(".normal-mode")
+const normalMode = document.querySelector(".normal-mode");
+const clear = document.querySelector(".clear");
 let colorMode = "normal";
 inputSize.addEventListener("click", defineSize);
 rgbMode.addEventListener("click", e => colorMode = "rgb");
 darkenMode.addEventListener("click", e => colorMode = "darken");
 normalMode.addEventListener("click", e => colorMode = "normal");
+clear.addEventListener("click", e => generatePixels(canvas.style.getPropertyValue("--pixels")));
 
 const defaultPixels = 16;
 generatePixels(defaultPixels);
