@@ -9,8 +9,8 @@ body {
   display: grid;
   width: 500px;
   height: 500px;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(var(--pixels), 1fr);
+  grid-template-rows: repeat(var(--pixels), 1fr);
 }
 
 .canvas-pixel {
